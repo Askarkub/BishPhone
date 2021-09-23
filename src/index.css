@@ -46,6 +46,8 @@ code {
 .content-block {
   display: flex;
   flex-wrap: wrap;
+  
+  
 }
 
 /* main page end */
@@ -53,4 +55,27 @@ code {
 a {
   color:unset;
   text-decoration:none;
+}
+
+.Nav{
+  background-color: gray !important;
+}
+
+.mainphoto{
+  background-image:url("https://www.bagnet.org/storage/29/29/13/15/729_486_590c3772e572c.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.maintext{
+  justify-content: center;
+  text-align: center;
+}
+
+.admin-color{
+  background-color: gray;
+}
+
+.cart1{
+  background-image: url("https://www.bagnet.org/storage/29/29/13/15/729_486_590c3772e572c.jpg");
 }

@@ -6,9 +6,10 @@ import Navbar from '../components/Navbar';
 
 const MainPage = () => {
     return (
-        <div>
+        <div className="mainphoto">
             <Navbar />
             <Container>
+                <h1 className="maintext">Телефоны на любой выбор</h1>
                 <div className="main">
                     <LeftSidebar />
                     <Content />

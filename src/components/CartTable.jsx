@@ -39,7 +39,7 @@ export default function CartTable() {
                 cart ? (
                     <TableContainer component={Paper} >
                         <Table className={classes.table} aria-label="caption table">
-                            <caption>A basic table example with a caption</caption>
+                            <caption>Корзина</caption>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>№</TableCell>

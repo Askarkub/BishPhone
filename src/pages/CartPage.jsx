@@ -6,13 +6,16 @@ import Navbar from '../components/Navbar'
 const CartPage = () => {
     return (
         <>
+        
             <Navbar />
+            
             <Container>
                 <div className="cart">
                     <h3 className="cart-title">Ваша корзина</h3>
                     <CartTable />
                 </div>
             </Container>
+            
         </>
     );
 };

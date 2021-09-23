@@ -1,1 +1,1 @@
-export const API = 'http://localhost:8000/vacuums'
+export const API = 'http://localhost:8000/phones'

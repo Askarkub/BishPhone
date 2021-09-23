@@ -65,7 +65,6 @@ const AdminContextProvider = ({ children }) => {
             saveEditedProduct
         }}>
             {children}
-            {/* здесь {} говорят, что дальше JS */}
         </adminContext.Provider>
     );
 };

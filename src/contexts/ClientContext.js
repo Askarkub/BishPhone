@@ -31,7 +31,6 @@ const ClientContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
     const getProducts = async () => {
-        // console.log(window.location);
         const { data } = await axios(`${API}${window.location.search}`)
         dispatch({
             type: "GET_PRODUCTS",
@@ -122,7 +121,7 @@ const ClientContextProvider = ({ children }) => {
         data.forEach(item => {
             arr.push(item.brand)
         })
-        // console.log(arr);
+        
 
         let newArr = []
         arr.forEach(elem => {
@@ -131,14 +130,13 @@ const ClientContextProvider = ({ children }) => {
                 newArr.push(elem)
             }
         })
-        // console.log(newArr);
+        
         dispatch({
             type: "GET_BRANDS",
             payload: newArr
         })
     }
 
-    /****** Pagination ************************************ */
 
     const [posts, setPosts] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -150,39 +148,34 @@ const ClientContextProvider = ({ children }) => {
             setPosts(data)
         }
         fetchProducts()
-    }, state.products)
+    }, [state.products])
 
     const indexOfLastPost = currentPage * postsPerPage
     const indexofFirstPost = indexOfLastPost - postsPerPage
     const currentPosts = posts.slice(indexofFirstPost, indexOfLastPost)
     const totalPosts = posts.length
-    // console.log(currentPosts);
+    
 
 
     const changePage = (newPage) => {
         setCurrentPage(newPage)
     }
 
-    /****************************************************** */
-
-    /********** Registration ***************************** */
+   
 
     const createNewUser = async (newUser, history) => {
         try {
             const data = await axios.post('https://intense-retreat-64750.herokuapp.com/auth/registration', newUser)
-            // console.log(data);
+            
             history.push('/')
         }
         catch (e) {
-            // console.log(e.response);
+           
             alert(e.response.data.message)
         }
     }
 
-    /***************************************************** */
-
-
-    /******** Autorisation ********************************/
+ 
     const login = async (user, history) => {
         try {
             const data = await axios.post('https://intense-retreat-64750.herokuapp.com/auth/login', user)
@@ -193,7 +186,7 @@ const ClientContextProvider = ({ children }) => {
         }
     }
 
-    /****************************************************** */
+    
 
     return (
         <clientContext.Provider value={{
@@ -215,7 +208,7 @@ const ClientContextProvider = ({ children }) => {
             login
         }}>
             {children}
-            {/* здесь {} говорят, что дальше JS */}
+           
         </clientContext.Provider>
     );
 };

@@ -14,7 +14,7 @@ const LeftSidebar = () => {
     const history = useHistory()
     const { getProducts, brands, getBrands } = useContext(clientContext)
 
-    /***** filterProducts ***************************** */
+    
 
     const filterProducts = (key, value) => {
         let search = new URLSearchParams(history.location.search)
@@ -26,7 +26,7 @@ const LeftSidebar = () => {
         getProducts()
     }
 
-    /****************************************************** */
+ 
 
     let search = new URLSearchParams(history.location.search)
     useEffect(() => {
@@ -35,7 +35,7 @@ const LeftSidebar = () => {
         getBrands()
     }, [])
 
-    /****************************************************** */
+    
 
     const resetFilter = () => {
         setPrice('')
@@ -43,16 +43,16 @@ const LeftSidebar = () => {
         history.push('/')
         getProducts()
     }
-    /**************************************************** */
+    
     return (
         <div className='left-sidebar'>
             <FormControl component="fieldset">
                 <FormLabel component="legend">Цена</FormLabel>
                 <RadioGroup aria-label="gender" name="gender1" value={price} onChange={(e) => filterProducts('price_lte', e.target.value)}>
-                    <FormControlLabel value="5000" control={<Radio />} label="5000" />
                     <FormControlLabel value="10000" control={<Radio />} label="10000" />
-                    <FormControlLabel value="15000" control={<Radio />} label="15000" />
-                    <FormControlLabel value="20000" control={<Radio />} label="20000" />
+                    <FormControlLabel value="30000" control={<Radio />} label="30000" />
+                    <FormControlLabel value="50000" control={<Radio />} label="50000" />
+                    <FormControlLabel value="100000" control={<Radio />} label="100000" />
                 </RadioGroup>
             </FormControl>
             <div>

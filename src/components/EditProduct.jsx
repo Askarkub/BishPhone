@@ -5,69 +5,55 @@ import { useHistory, useParams } from 'react-router';
 
 const EditProduct = () => {
     const { getProductToEdit, productToEdit, saveEditedProduct } = useContext(adminContext)
-    const [editVacuumCleaner, setEditVacuumCleaner] = useState(productToEdit)
+    const [editBishPhone, setEditBishPhone] = useState(productToEdit)
     const { id } = useParams()
     const history = useHistory()
+
     useEffect(() => {
-        setEditVacuumCleaner(productToEdit)
+        setEditBishPhone(productToEdit)
     }, [productToEdit])
+
     useEffect(() => {
         getProductToEdit(id)
     }, [])
+
     const handleInputs = (e) => {
         let obj = {
-            ...editVacuumCleaner,
+            ...editBishPhone,
             [e.target.name]: e.target.value
         }
-        setEditVacuumCleaner(obj)
+        setEditBishPhone(obj)
     }
     return (
         <div>
             {
-                editVacuumCleaner ? (
+                editBishPhone ? (
                     <div className="add-inputs">
                         <form>
-                            <TextField value={editVacuumCleaner.title} id="standard-basic" label="Название пылесоса" name="title" onChange={handleInputs} />
-                            <TextField value={editVacuumCleaner.description} id="standard-basic" label="Описание пылесоса" name="description" onChange={handleInputs} />
-                            <TextField type="number" value={editVacuumCleaner.price} id="standard-basic" label="Цена пылесоса" name="price" onChange={handleInputs} />
-                            <TextField type="date" value={editVacuumCleaner.year} id="standard-basic" label="Дата выпуска пылесоса" name="year" onChange={handleInputs} />
-                            {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <KeyboardDatePicker
-                                    disableToolbar
-                                    variant="inline"
-                                    format="MM/dd/yyyy"
-                                    margin="normal"
-                                    id="date-picker-inline"
-                                    label="Date picker inline"
-                                    value={new Date('2014-08-18T21:11:54')}
-                                    onChange={handleInputs}
-                                    name="year"
-                                    KeyboardButtonProps={{
-                                        'aria-label': 'change date',
-                                    }}
-                                />
-                            </MuiPickersUtilsProvider> */}
+                            <TextField value={editBishPhone.title} id="standard-basic" label="Название телефона" name="title" onChange={handleInputs} />
+                            <TextField value={editBishPhone.description} id="standard-basic" label="Описание телефона" name="description" onChange={handleInputs} />
+                            <TextField type="number" value={editBishPhone.price} id="standard-basic" label="Цена телефона" name="price" onChange={handleInputs} />
+                            <TextField type="date" value={editBishPhone.year} id="standard-basic" label="Дата выпуска телефона" name="year" onChange={handleInputs} />
 
-                            <TextField value={editVacuumCleaner.color} id="standard-basic" label="Цвет пылесоса" name="color" onChange={handleInputs} />
-                            <TextField value={editVacuumCleaner.photo} id="standard-basic" label="Модель пылесоса" name="photo" onChange={handleInputs} />
-                            <TextField type="number" value={editVacuumCleaner.weight} id="standard-basic" label="Вес пылесоса" name="weight" onChange={handleInputs} />
-                            <TextField value={editVacuumCleaner.brand} id="standard-basic" label="Бренд пылесоса" name="brand" onChange={handleInputs} />
+                            <TextField value={editBishPhone.color} id="standard-basic" label="Цвет телефона" name="color" onChange={handleInputs} />
+                            <TextField value={editBishPhone.photo} id="standard-basic" label="Модель телефона" name="photo" onChange={handleInputs} />
+                            <TextField value={editBishPhone.brand} id="standard-basic" label="Бренд телефона" name="brand" onChange={handleInputs} />
                             <Button
                                 onClick={(e) => {
                                     e.preventDefault()
                                     if (
-                                        !editVacuumCleaner.title.trim() ||
-                                        !editVacuumCleaner.description.trim() ||
-                                        !editVacuumCleaner.price.trim() ||
-                                        !editVacuumCleaner.color.trim() ||
-                                        !editVacuumCleaner.photo.trim() ||
-                                        !editVacuumCleaner.brand.trim() ||
-                                        !editVacuumCleaner.weight.trim() ||
-                                        !editVacuumCleaner.year.trim()) {
+                                        !editBishPhone.title.trim() ||
+                                        !editBishPhone.description.trim() ||
+                                        // !editBishPhone.price.trim() ||
+                                        !editBishPhone.color.trim() ||
+                                        !editBishPhone.photo.trim() ||
+                                        !editBishPhone.brand.trim() ||
+                                        !editBishPhone.year.trim()
+                                    ) {
                                         alert("Заполните все поля")
                                         return
                                     }
-                                    saveEditedProduct(editVacuumCleaner)
+                                    saveEditedProduct(editBishPhone)
                                     history.push('/admin')
                                 }}
                                 variant="outlined"

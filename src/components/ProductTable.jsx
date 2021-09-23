@@ -29,7 +29,7 @@ export default function ProductTable() {
                 products ? (
                     <TableContainer component={Paper} >
                         <Table className={classes.table} aria-label="caption table">
-                            <caption>A basic table example with a caption</caption>
+                            <caption>Корзина</caption>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>№</TableCell>
@@ -40,7 +40,6 @@ export default function ProductTable() {
                                     <TableCell align="left">Фото</TableCell>
                                     <TableCell align="left">Цвета</TableCell>
                                     <TableCell align="left">Год</TableCell>
-                                    <TableCell align="left">Вес</TableCell>
                                     <TableCell align="left">#</TableCell>
                                     <TableCell align="left">#</TableCell>
                                 </TableRow>
@@ -60,7 +59,6 @@ export default function ProductTable() {
                                         </TableCell>
                                         <TableCell align="left">{row.color}</TableCell>
                                         <TableCell align="left">{row.year}</TableCell>
-                                        <TableCell align="left">{row.weight}</TableCell>
                                         <TableCell align="left">
                                             <Button
                                                 onClick={() => deleteProduct(row.id)}
@@ -77,7 +75,6 @@ export default function ProductTable() {
                                                 </Button>
                                             </Link>
                                         </TableCell>
-                                        <TableCell align="left">{row.weight}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

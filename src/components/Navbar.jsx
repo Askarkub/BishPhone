@@ -193,7 +193,7 @@ export default function Navbar() {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar className="Nav" position="static">
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -204,7 +204,7 @@ export default function Navbar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        Material-UI
+                        BishPhone
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>

@@ -4,7 +4,7 @@ import ProductTable from '../components/ProductTable'
 
 const AdminPage = () => {
     return (
-        <div>
+        <div className="admin-color">
             <AddProduct />
             <ProductTable />
         </div>
