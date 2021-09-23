@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     sectionMobile: {
         display: 'flex',
         [theme.breakpoints.up('md')]: {
-            display: 'none',
+            display: 'flex',
         },
     },
 }));
@@ -139,14 +139,16 @@ export default function Navbar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={productsCountInCart} color="secondary">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <p>Messages</p>
-            </MenuItem>
+            <Link to="/main">
+                <MenuItem>
+                    <IconButton aria-label="show 4 new mails" color="inherit">
+                        <Badge badgeContent={productsCountInCart} color="secondary">
+                            <MailIcon />
+                        </Badge>
+                    </IconButton>
+                    <p>Messages</p>
+                </MenuItem>
+            </Link>
             <MenuItem>
                 <IconButton aria-label="show 11 new notifications" color="inherit">
                     <Badge badgeContent={11} color="secondary">
@@ -228,11 +230,6 @@ export default function Navbar() {
                                 <Link to="/cart">
                                     <ShoppingCartIcon />
                                 </Link>
-                            </Badge>
-                        </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
                             </Badge>
                         </IconButton>
                         <IconButton

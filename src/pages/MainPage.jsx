@@ -11,8 +11,8 @@ const MainPage = () => {
             <Container>
                 <h1 className="maintext">Телефоны на любой выбор</h1>
                 <div className="main">
-                    <LeftSidebar />
                     <Content />
+                    <LeftSidebar />
                 </div>
             </Container>
         </div>

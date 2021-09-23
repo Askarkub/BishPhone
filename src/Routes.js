@@ -8,6 +8,7 @@ import EditPage from './pages/EditPage';
 import MainPage from './pages/MainPage';
 import SignInPage from './pages/SigninPage';
 import SignUpPage from './pages/SignUpPage';
+import OrderPage from './pages/OrderPage';
 
 const Routes = () => {
     return (
@@ -21,6 +22,7 @@ const Routes = () => {
                         <Route exact path="/cart" component={CartPage} />
                         <Route exact path="/sign-in" component={SignInPage} />
                         <Route exact path="/sign-up" component={SignUpPage} />
+                        <Route exact path="/order" component={OrderPage} />
                     </Switch>
                 </BrowserRouter>
             </AdminContextProvider>

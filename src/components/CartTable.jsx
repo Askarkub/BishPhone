@@ -49,6 +49,7 @@ export default function CartTable() {
                                     <TableCell align="left">Цвета</TableCell>
                                     <TableCell align="left">Количество</TableCell>
                                     <TableCell align="left">Общая сумма</TableCell>
+                                    <TableCell align="left">Оформление заказа</TableCell>
 
                                 </TableRow>
                             </TableHead>
@@ -72,6 +73,11 @@ export default function CartTable() {
                                             />
                                         </TableCell>
                                         <TableCell align="left">{row.subPrice}</TableCell>
+                                        <TableCell align="left">
+                                            <Link to="/order">
+                                                <Button>Заказать</Button>
+                                            </Link>
+                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

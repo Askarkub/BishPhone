@@ -6,7 +6,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { useHistory } from 'react-router-dom'
 import { clientContext } from '../contexts/ClientContext';
-import { Button } from '@material-ui/core';
+import { Button, makeStyles, Slider, Typography } from '@material-ui/core';
+import { mergeClasses } from '@material-ui/styles';
 
 const LeftSidebar = () => {
     const [price, setPrice] = React.useState('');
@@ -14,7 +15,7 @@ const LeftSidebar = () => {
     const history = useHistory()
     const { getProducts, brands, getBrands } = useContext(clientContext)
 
-    
+
 
     const filterProducts = (key, value) => {
         let search = new URLSearchParams(history.location.search)
@@ -26,7 +27,7 @@ const LeftSidebar = () => {
         getProducts()
     }
 
- 
+
 
     let search = new URLSearchParams(history.location.search)
     useEffect(() => {
@@ -35,7 +36,7 @@ const LeftSidebar = () => {
         getBrands()
     }, [])
 
-    
+
 
     const resetFilter = () => {
         setPrice('')
@@ -43,7 +44,8 @@ const LeftSidebar = () => {
         history.push('/')
         getProducts()
     }
-    
+
+
     return (
         <div className='left-sidebar'>
             <FormControl component="fieldset">
@@ -69,7 +71,10 @@ const LeftSidebar = () => {
             </div>
             <Button onClick={resetFilter}>Reset</Button>
         </div>
+
+
     );
 };
 
 export default LeftSidebar;
+

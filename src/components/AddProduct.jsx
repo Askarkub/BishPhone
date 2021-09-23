@@ -32,26 +32,8 @@ const AddProduct = () => {
                     <TextField value={bishPhone.description} id="standard-basic" label="Описание телефона" name="description" onChange={handleInputs} />
                     <TextField type="number" value={bishPhone.price} id="standard-basic" label="Цена телефона" name="price" onChange={handleInputs} />
                     <TextField type="date" value={bishPhone.year} id="standard-basic" label="Дата выпуска телефона" name="year" onChange={handleInputs} />
-                    {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <KeyboardDatePicker
-                            disableToolbar
-                            variant="inline"
-                            format="MM/dd/yyyy"
-                            margin="normal"
-                            id="date-picker-inline"
-                            label="Date picker inline"
-                            value={new Date('2014-08-18T21:11:54')}
-                            onChange={handleInputs}
-                            name="year"
-                            KeyboardButtonProps={{
-                                'aria-label': 'change date',
-                            }}
-                        />
-                    </MuiPickersUtilsProvider> */}
-
                     <TextField value={bishPhone.color} id="standard-basic" label="Цвет телефона" name="color" onChange={handleInputs} />
                     <TextField value={bishPhone.photo} id="standard-basic" label="Фото телефона" name="photo" onChange={handleInputs} />
-    
                     <TextField value={bishPhone.brand} id="standard-basic" label="Бренд телефона" name="brand" onChange={handleInputs} />
                     <Button
                         onClick={(e) => {

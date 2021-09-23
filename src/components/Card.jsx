@@ -48,7 +48,6 @@ export default function MediaCard({ item }) {
                         <Truncate lines={3} ellipsis={<span>... <a href='/link/to/article'>далее</a></span>}>
                             {item.description}
                         </Truncate>
-                        {/* <span style={{ display: 'block', fontSize: "16px" }}>Цена: {item.price} сом</span> */}
                     </Typography>
                     <h3>Цена: {item.price}</h3>
                 </CardContent>

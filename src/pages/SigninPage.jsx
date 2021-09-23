@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%', 
+        width: '100%',
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -119,6 +119,7 @@ export default function SignInPage() {
                             id="password"
                             autoComplete="current-password"
                         />
+
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
                             label="Remember me"
