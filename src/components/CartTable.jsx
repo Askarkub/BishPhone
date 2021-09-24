@@ -39,7 +39,6 @@ export default function CartTable() {
                 cart ? (
                     <TableContainer component={Paper} >
                         <Table className={classes.table} aria-label="caption table">
-                            <caption>Корзина</caption>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>№</TableCell>
@@ -49,7 +48,6 @@ export default function CartTable() {
                                     <TableCell align="left">Цвета</TableCell>
                                     <TableCell align="left">Количество</TableCell>
                                     <TableCell align="left">Общая сумма</TableCell>
-                                    <TableCell align="left">Оформление заказа</TableCell>
 
                                 </TableRow>
                             </TableHead>
@@ -73,15 +71,13 @@ export default function CartTable() {
                                             />
                                         </TableCell>
                                         <TableCell align="left">{row.subPrice}</TableCell>
-                                        <TableCell align="left">
-                                            <Link to="/order">
-                                                <Button>Заказать</Button>
-                                            </Link>
-                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
                         </Table>
+                        <Link to="/order">
+                            <Button variant="contained" color="primary"  >Оформить заказ</Button>
+                        </Link>
                     </TableContainer>
                 ) : (
                     <h2>Loading...</h2>

@@ -9,7 +9,7 @@ const MainPage = () => {
         <div className="mainphoto">
             <Navbar />
             <Container>
-                <h1 className="maintext">Телефоны на любой выбор</h1>
+                <h1 className="maintext">Your dream PHONES</h1>
                 <div className="main">
                     <Content />
                     <LeftSidebar />

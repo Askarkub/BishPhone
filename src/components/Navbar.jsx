@@ -17,6 +17,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { clientContext } from '../contexts/ClientContext';
 import { Link, useHistory } from 'react-router-dom';
+import Logo from '../images/logo.png'
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     title: {
-        display: 'none',
+        display: 'flex',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     sectionMobile: {
         display: 'flex',
         [theme.breakpoints.up('md')]: {
-            display: 'flex',
+            display: 'none',
         },
     },
 }));
@@ -139,23 +140,16 @@ export default function Navbar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <Link to="/main">
-                <MenuItem>
-                    <IconButton aria-label="show 4 new mails" color="inherit">
-                        <Badge badgeContent={productsCountInCart} color="secondary">
-                            <MailIcon />
-                        </Badge>
-                    </IconButton>
-                    <p>Messages</p>
-                </MenuItem>
-            </Link>
+
             <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <Badge badgeContent={11} color="secondary">
-                        <NotificationsIcon />
+                <IconButton aria-label="show 4 new mails" color="inherit">
+                    <Badge badgeContent={productsCountInCart} color="secondary">
+                        <Link to="/cart">
+                            <ShoppingCartIcon />
+                        </Link>
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+                <p>Корзина</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -166,7 +160,7 @@ export default function Navbar() {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Profile</p>
+                <p>Профиль</p>
             </MenuItem>
         </Menu>
     );
@@ -197,17 +191,14 @@ export default function Navbar() {
         <div className={classes.grow}>
             <AppBar className="Nav" position="static">
                 <Toolbar>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        BishPhone
-                    </Typography>
+                    <Link to="/">
+                        <img width="50px" src={Logo} alt="" />
+                    </Link>
+                    <Link to="/">
+                        <Typography className={classes.title} variant="h6" noWrap>
+                            BishPhone
+                        </Typography>
+                    </Link>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

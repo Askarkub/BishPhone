@@ -39,17 +39,20 @@ code {
   width: 20%;
   /* border: 1px solid red; */
   padding-left: 20px;
+  background: rgb(143, 141, 141);
+  margin-left: 10px;
 }
 
 .content{
   width: 80%;
+  background: rgb(181, 181, 181);
 }
 
 .content-block {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background: rgb(181, 181, 181);
+  
 }
 
 /* main page end */
