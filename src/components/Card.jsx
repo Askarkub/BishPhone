@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Truncate from 'react-truncate';
 import { clientContext } from '../contexts/ClientContext';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -62,9 +63,11 @@ export default function MediaCard({ item }) {
                         color={checkProductInCart(item.id) ? "primary" : "secondary"}
                     />
                 </Button>
-                <Button size="small" color="primary">
-                    Подробнее
-                </Button>
+                <Link to={`/info/${item.id}`}>
+                    <Button size="small" color="primary">
+                        Подробнее
+                    </Button>
+                </Link>
             </CardActions>
         </Card>
     );

@@ -49,6 +49,14 @@ const AdminContextProvider = ({ children }) => {
         })
     }
 
+    const getProductDetails = async (id) => {
+        const { data } = await axios(`${API}/${id}`)
+        dispatch({
+            type: "GET_PRODUCT_DETAILS",
+            payload: data
+        })
+    }
+
     const saveEditedProduct = async (editedProduct) => {
         await axios.patch(`${API}/${editedProduct.id}`, { ...editedProduct, price: +editedProduct.price })
         getProducts()
@@ -62,7 +70,8 @@ const AdminContextProvider = ({ children }) => {
             getProducts,
             deleteProduct,
             getProductToEdit,
-            saveEditedProduct
+            saveEditedProduct,
+            getProductDetails
         }}>
             {children}
         </adminContext.Provider>
